@@ -17,6 +17,7 @@ class TrackingPageController extends GetxController {
       'status':'pending'
     }
   ];
+  
   final current_checkpoint=0.obs;
   final count = 0.obs;
   @override

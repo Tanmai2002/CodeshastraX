@@ -20,22 +20,35 @@ class HomeView extends GetView<HomeController> {
         backgroundColor: Colors.green,
         centerTitle: true,
       ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          // Add your onPressed logic here
+        },
+        child: const Icon(Icons.video_collection),
+        backgroundColor: Colors.green,
+      ),
+      
+   floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       bottomNavigationBar: AnimatedBottomNavigationBar(activeIndex: controller.activeIndex.value,
       icons: [
         Icons.home,
-        Icons.video_collection,
         Icons.shopping_bag
       ],
       onTap: (index){
         controller.onBottomNavTap(index);
       },
+      activeColor: Colors.green,
+      inactiveColor: Colors.grey[600],
+      backgroundColor: Colors.white,
+      gapLocation: GapLocation.center,
+      iconSize: 30,
+
       ),
       body:  Center(
         child: PageView(
           controller:controller.tabController,
           children: [
             TrackingPageView(),
-            Center(child: Text('Shorts')),
             Center(child: Text('Market Place')),
           ],
         )
