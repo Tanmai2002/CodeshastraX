@@ -1,7 +1,13 @@
 import 'package:get/get.dart';
 
+import '../modules/authentication/bindings/authentication_binding.dart';
+import '../modules/authentication/views/authentication_view.dart';
+import '../modules/edu_shorts/bindings/edu_shorts_binding.dart';
+import '../modules/edu_shorts/views/edu_shorts_view.dart';
 import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
+import '../modules/marketplace/bindings/marketplace_binding.dart';
+import '../modules/marketplace/views/marketplace_view.dart';
 
 part 'app_routes.dart';
 
@@ -15,6 +21,21 @@ class AppPages {
       name: _Paths.HOME,
       page: () => const HomeView(),
       binding: HomeBinding(),
+    ),
+    GetPage(
+      name: _Paths.AUTHENTICATION,
+      page: () => const AuthenticationView(),
+      binding: AuthenticationBinding(),
+    ),
+    GetPage(
+      name: _Paths.MARKETPLACE,
+      page: () => const MarketplaceView(),
+      binding: MarketplaceBinding(),
+    ),
+    GetPage(
+      name: _Paths.EDU_SHORTS,
+      page: () => const EduShortsView(),
+      binding: EduShortsBinding(),
     ),
   ];
 }
