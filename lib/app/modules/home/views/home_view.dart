@@ -1,4 +1,5 @@
 import 'package:animated_bottom_navigation_bar/animated_bottom_navigation_bar.dart';
+import 'package:codeshastra/app/modules/marketplace/views/marketplace_view.dart';
 import 'package:codeshastra/app/modules/tracking_page/views/tracking_page_view.dart';
 import 'package:codeshastra/app/routes/app_pages.dart';
 import 'package:flutter/material.dart';
@@ -13,7 +14,8 @@ class HomeView extends GetView<HomeController> {
 
   @override
   Widget build(BuildContext context) {
-    bool isCheck = false; // Example boolean variable, replace it with your logic
+    bool isCheck =
+        false; // Example boolean variable, replace it with your logic
 
     return Scaffold(
       appBar: AppBar(
@@ -29,32 +31,27 @@ class HomeView extends GetView<HomeController> {
         child: const Icon(Icons.video_collection),
         backgroundColor: Colors.green,
       ),
-      
-   floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      bottomNavigationBar: AnimatedBottomNavigationBar(activeIndex: controller.activeIndex.value,
-      icons: [
-        Icons.home,
-        Icons.shopping_bag
-      ],
-      onTap: (index){
-        controller.onBottomNavTap(index);
-      },
-      activeColor: Colors.green,
-      inactiveColor: Colors.grey[600],
-      backgroundColor: Colors.white,
-      gapLocation: GapLocation.center,
-      iconSize: 30,
-
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      bottomNavigationBar: AnimatedBottomNavigationBar(
+        activeIndex: controller.activeIndex.value,
+        icons: [Icons.home, Icons.shopping_bag],
+        onTap: (index) {
+          controller.onBottomNavTap(index);
+        },
+        activeColor: Colors.green,
+        inactiveColor: Colors.grey[600],
+        backgroundColor: Colors.white,
+        gapLocation: GapLocation.center,
+        iconSize: 30,
       ),
-      body:  Center(
-        child: PageView(
-          controller:controller.tabController,
-          children: [
-            TrackingPageView(),
-            Center(child: Text('Market Place')),
-          ],
-        )
-      ),
+      body: Center(
+          child: PageView(
+        controller: controller.tabController,
+        children: [
+          TrackingPageView(),
+          MarketplaceView(),
+        ],
+      )),
     );
   }
 }
