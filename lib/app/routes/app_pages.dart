@@ -8,6 +8,8 @@ import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
 import '../modules/marketplace/bindings/marketplace_binding.dart';
 import '../modules/marketplace/views/marketplace_view.dart';
+import '../modules/tracking_page/bindings/tracking_page_binding.dart';
+import '../modules/tracking_page/views/tracking_page_view.dart';
 
 part 'app_routes.dart';
 
@@ -36,6 +38,11 @@ class AppPages {
       name: _Paths.EDU_SHORTS,
       page: () => const EduShortsView(),
       binding: EduShortsBinding(),
+    ),
+    GetPage(
+      name: _Paths.TRACKING_PAGE,
+      page: () => const TrackingPageView(),
+      binding: TrackingPageBinding(),
     ),
   ];
 }

@@ -7,6 +7,7 @@ abstract class Routes {
   static const AUTHENTICATION = _Paths.AUTHENTICATION;
   static const MARKETPLACE = _Paths.MARKETPLACE;
   static const EDU_SHORTS = _Paths.EDU_SHORTS;
+  static const TRACKING_PAGE = _Paths.TRACKING_PAGE;
 }
 
 abstract class _Paths {
@@ -15,4 +16,5 @@ abstract class _Paths {
   static const AUTHENTICATION = '/authentication';
   static const MARKETPLACE = '/marketplace';
   static const EDU_SHORTS = '/edu-shorts';
+  static const TRACKING_PAGE = '/tracking-page';
 }
