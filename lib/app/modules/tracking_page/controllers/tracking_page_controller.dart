@@ -5,16 +5,13 @@ class TrackingPageController extends GetxController {
 
   List<Map<String,dynamic>> checkpoints = [
     {
-      'name':'Pre-Planting',
-      'status':'completed'
+      'name':'Pre-Planting'
     },
     {
-      'name':'Planting',
-      'status':'completed'
+      'name':'Planting'
     },
     {
-      'name':'Sale View',
-      'status':'pending'
+      'name':'Sale View'
     }
   ];
   
@@ -23,6 +20,12 @@ class TrackingPageController extends GetxController {
   @override
   void onInit() {
     super.onInit();
+  }
+
+  updateCurrentCheckpoint(int index){
+    current_checkpoint.value=index;
+    print(current_checkpoint.value);
+    notifyChildrens();
   }
 
   @override

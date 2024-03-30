@@ -62,20 +62,10 @@ class TrackingPageView extends GetView<TrackingPageController> {
               ),
             ),
             builder: TimelineTileBuilder.connected(
-              oppositeContentsBuilder: (context, index) {
-                return Padding(
-                  padding: const EdgeInsets.only(right: 8.0),
-                  child: Text(
-                    controller.checkpoints[index]['status'],
-                    style: const TextStyle(
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                );
-              },
-             
+              
               indicatorBuilder: (context, index) {
-                
+                return Obx((){
+                  
                 if (index < controller.current_checkpoint.value) {
                   return completedStatus();
                 } else if (index == controller.current_checkpoint.value) {
@@ -83,6 +73,7 @@ class TrackingPageView extends GetView<TrackingPageController> {
                 } else {
                   return pendingStatus();
                 }
+                });
               },
 
               connectionDirection: ConnectionDirection.before,
@@ -90,11 +81,16 @@ class TrackingPageView extends GetView<TrackingPageController> {
               contentsBuilder: (context, index) {
                 return Padding(
                   padding: const EdgeInsets.only(left: 8.0),
-                  child: Text(
+                  child: InkWell(
+                    onTap: () {
+                      controller.updateCurrentCheckpoint(index);
+                    },
+                    child: Text(
                     controller.checkpoints[index]['name'],
                     style: const TextStyle(
                       fontWeight: FontWeight.bold,
                     ),
+                  ),
                   ),
                 );
               },
@@ -109,13 +105,14 @@ class TrackingPageView extends GetView<TrackingPageController> {
               },
             ),
           ),
-        ),
-          ),
+        )),
+        
         Expanded(
-            child: IndexedStack(
+          flex: 8,
+            child: Obx(()=>IndexedStack(
           index: controller.current_checkpoint.value,
           children: [PrePlantingView(), PlantingView(), SaleView()],
-        ))
+        )))
       ],
     ));
   }
