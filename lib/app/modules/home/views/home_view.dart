@@ -4,16 +4,20 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
 import 'package:get/get.dart';
-
+import 'package:timelines/timelines.dart';
 import '../controllers/home_controller.dart';
 
 class HomeView extends GetView<HomeController> {
   const HomeView({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
+    bool isCheck = false; // Example boolean variable, replace it with your logic
+
     return Scaffold(
       appBar: AppBar(
-        title: const Text('HomeView'),
+        title: const Text('KhetiSeva'),
+        backgroundColor: Colors.green,
         centerTitle: true,
       ),
       bottomNavigationBar: AnimatedBottomNavigationBar(activeIndex: controller.activeIndex.value,
