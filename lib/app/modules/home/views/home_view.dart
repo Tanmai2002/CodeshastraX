@@ -1,5 +1,6 @@
 import 'package:animated_bottom_navigation_bar/animated_bottom_navigation_bar.dart';
 import 'package:codeshastra/app/modules/tracking_page/views/tracking_page_view.dart';
+import 'package:codeshastra/app/routes/app_pages.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
@@ -22,6 +23,7 @@ class HomeView extends GetView<HomeController> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
+          Get.toNamed(Routes.VOICE_ASSISTANT);
           // Add your onPressed logic here
         },
         child: const Icon(Icons.video_collection),

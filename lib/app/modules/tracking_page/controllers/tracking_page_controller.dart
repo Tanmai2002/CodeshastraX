@@ -25,7 +25,7 @@ class TrackingPageController extends GetxController {
   updateCurrentCheckpoint(int index){
     current_checkpoint.value=index;
     print(current_checkpoint.value);
-    notifyChildrens();
+    // notifyChildrens();
   }
 
   @override

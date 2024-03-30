@@ -10,6 +10,8 @@ import '../modules/marketplace/bindings/marketplace_binding.dart';
 import '../modules/marketplace/views/marketplace_view.dart';
 import '../modules/tracking_page/bindings/tracking_page_binding.dart';
 import '../modules/tracking_page/views/tracking_page_view.dart';
+import '../modules/voice_assistant/bindings/voice_assistant_binding.dart';
+import '../modules/voice_assistant/views/voice_assistant_view.dart';
 
 part 'app_routes.dart';
 
@@ -43,6 +45,11 @@ class AppPages {
       name: _Paths.TRACKING_PAGE,
       page: () => const TrackingPageView(),
       binding: TrackingPageBinding(),
+    ),
+    GetPage(
+      name: _Paths.VOICE_ASSISTANT,
+      page: () => const VoiceAssistantView(),
+      binding: VoiceAssistantBinding(),
     ),
   ];
 }
