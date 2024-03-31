@@ -1,5 +1,7 @@
 import 'package:get/get.dart';
 
+import '../modules/CropImage/bindings/crop_image_binding.dart';
+import '../modules/CropImage/views/crop_image_view.dart';
 import '../modules/authentication/bindings/authentication_binding.dart';
 import '../modules/authentication/views/authentication_view.dart';
 import '../modules/edu_shorts/bindings/edu_shorts_binding.dart';
@@ -57,6 +59,11 @@ class AppPages {
       name: _Paths.LANGUAGE,
       page: () => const LanguageView(),
       binding: LanguageBinding(),
+    ),
+    GetPage(
+      name: _Paths.CROP_IMAGE,
+      page: () => const CropImageView(),
+      binding: CropImageBinding(),
     ),
   ];
 }

@@ -29,7 +29,19 @@ class HomeView extends GetView<HomeController> {
         ),
         title: const Text('KhetiSeva'),
         centerTitle: true,
+        actions: [
+          IconButton(
+            onPressed: () {
+              Get.toNamed(Routes.LANGUAGE);
+            },
+            icon: const Icon(Icons.language),
+          ),
+          IconButton(onPressed:(){
+            Get.toNamed(Routes.CROP_IMAGE);
+          } , icon: Icon(Icons.camera))
+        ],
       ),
+      
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           Get.toNamed(Routes.VOICE_ASSISTANT);

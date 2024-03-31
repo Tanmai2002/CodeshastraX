@@ -10,6 +10,7 @@ abstract class Routes {
   static const TRACKING_PAGE = _Paths.TRACKING_PAGE;
   static const VOICE_ASSISTANT = _Paths.VOICE_ASSISTANT;
   static const LANGUAGE = _Paths.LANGUAGE;
+  static const CROP_IMAGE = _Paths.CROP_IMAGE;
 }
 
 abstract class _Paths {
@@ -21,4 +22,5 @@ abstract class _Paths {
   static const TRACKING_PAGE = '/tracking-page';
   static const VOICE_ASSISTANT = '/voice-assistant';
   static const LANGUAGE = '/language';
+  static const CROP_IMAGE = '/crop-image';
 }
