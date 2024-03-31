@@ -5,13 +5,13 @@ class TrackingPageController extends GetxController {
 
   List<Map<String,dynamic>> checkpoints = [
     {
-      'name':'Pre-Planting'
+      'name':'Education'
     },
     {
       'name':'Planting'
     },
     {
-      'name':'Sale View'
+      'name':'Schemes'
     }
   ];
   
