@@ -12,7 +12,7 @@ class TrackingPageView extends GetView<TrackingPageController> {
   const TrackingPageView({Key? key}) : super(key: key);
 
   Widget completedStatus() {
-    return Container(
+    return Container (
       height: 20,
       width: 20,
       decoration: BoxDecoration(shape: BoxShape.circle, color: Colors.green),
