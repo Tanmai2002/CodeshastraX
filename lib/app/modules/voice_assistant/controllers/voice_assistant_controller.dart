@@ -27,7 +27,7 @@ class VoiceAssistantController extends GetxController {
     String translated=text;
     print(translated);
     geminiProvider.getResponse(
-      "Assume a Farmer needs Your help in few things.Keep it simple and direct.This is the message he sent: $translated."
+      "Assume a Farmer needs Your help in few things.Respond in simple text without applying any formattings and direct.This is the message he sent: $translated."
      
     ).then((value) async{
       messages.add(ChatMessage(sender: 'assistant', content: value));
