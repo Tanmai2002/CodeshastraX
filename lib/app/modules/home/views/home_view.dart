@@ -14,13 +14,20 @@ class HomeView extends GetView<HomeController> {
 
   @override
   Widget build(BuildContext context) {
-    bool isCheck =
-        false; // Example boolean variable, replace it with your logic
+    bool isCheck = false; // Example boolean variable, replace it with your logic
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('KhetiSeva'),
         backgroundColor: Colors.green,
+        leading: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Image.asset(
+            'assets/logo.jpeg', // Path to your image asset
+            width: 40, // Adjust the width as needed
+            height: 40, // Adjust the height as needed
+          ),
+        ),
+        title: const Text('KhetiSeva'),
         centerTitle: true,
       ),
       floatingActionButton: FloatingActionButton(
@@ -45,13 +52,14 @@ class HomeView extends GetView<HomeController> {
         iconSize: 30,
       ),
       body: Center(
-          child: PageView(
-        controller: controller.tabController,
-        children: [
-          TrackingPageView(),
-          MarketplaceView(),
-        ],
-      )),
+        child: PageView(
+          controller: controller.tabController,
+          children: [
+            TrackingPageView(),
+            MarketplaceView(),
+          ],
+        ),
+      ),
     );
   }
 }
