@@ -6,6 +6,8 @@ import '../modules/edu_shorts/bindings/edu_shorts_binding.dart';
 import '../modules/edu_shorts/views/edu_shorts_view.dart';
 import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
+import '../modules/language/bindings/language_binding.dart';
+import '../modules/language/views/language_view.dart';
 import '../modules/marketplace/bindings/marketplace_binding.dart';
 import '../modules/marketplace/views/marketplace_view.dart';
 import '../modules/tracking_page/bindings/tracking_page_binding.dart';
@@ -18,7 +20,7 @@ part 'app_routes.dart';
 class AppPages {
   AppPages._();
 
-  static const INITIAL = Routes.HOME;
+  static const INITIAL = Routes.LANGUAGE;
 
   static final routes = [
     GetPage(
@@ -48,8 +50,13 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.VOICE_ASSISTANT,
-      page: () => const VoiceAssistantView(),
+      page: () => VoiceAssistantView(),
       binding: VoiceAssistantBinding(),
+    ),
+    GetPage(
+      name: _Paths.LANGUAGE,
+      page: () => const LanguageView(),
+      binding: LanguageBinding(),
     ),
   ];
 }

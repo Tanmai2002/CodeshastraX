@@ -9,6 +9,7 @@ abstract class Routes {
   static const EDU_SHORTS = _Paths.EDU_SHORTS;
   static const TRACKING_PAGE = _Paths.TRACKING_PAGE;
   static const VOICE_ASSISTANT = _Paths.VOICE_ASSISTANT;
+  static const LANGUAGE = _Paths.LANGUAGE;
 }
 
 abstract class _Paths {
@@ -19,4 +20,5 @@ abstract class _Paths {
   static const EDU_SHORTS = '/edu-shorts';
   static const TRACKING_PAGE = '/tracking-page';
   static const VOICE_ASSISTANT = '/voice-assistant';
+  static const LANGUAGE = '/language';
 }

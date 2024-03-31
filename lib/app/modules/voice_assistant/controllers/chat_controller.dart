@@ -10,7 +10,7 @@ class ChatController extends GetxController {
   final stt.SpeechToText speech = stt.SpeechToText();
   final RxBool hasPermission = RxBool(false); // Reactive variable for permission status
   final RxString recognizedText = RxString(''); // Reactive variable for recognized text
-
+  final RxString status = "notListening".obs;
   @override
   void onInit() {
     initializeSpeech();
@@ -24,9 +24,9 @@ class ChatController extends GetxController {
     hasPermission.value = available;
   }
 
-void listenForSpeech() async {
+void listenForSpeech(String locale) async {
   // if (hasPermission.value) {
-    speech.listen(onResult: resultListener);
+    speech.listen(onResult: resultListener, localeId: locale);
   
 }
 
@@ -37,6 +37,10 @@ void listenForSpeech() async {
 
   void statusListener(String status) {
     // Handle status updates (e.g., listening started/stopped)
+    if(status=="done"){
+    Get.find<VoiceAssistantController>().sendMessage(recognizedText.value);
+    }
+    this.status.value = status;
   }
 
   void errorListener(SpeechRecognitionError error) {
@@ -45,7 +49,6 @@ void listenForSpeech() async {
 
   void resultListener(SpeechRecognitionResult result) {
     recognizedText.value = result.recognizedWords;
-    Get.find<VoiceAssistantController>().sendMessage(recognizedText.value);
 
     // Update text field or create a new message with recognized text
   }
